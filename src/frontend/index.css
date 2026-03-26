@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Light mode — warm cream + deep teal */
+    --background: 0.97 0.006 80;
+    --foreground: 0.18 0.02 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 240;
+    --primary: 0.52 0.15 196;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.93 0.02 200;
+    --secondary-foreground: 0.18 0.02 240;
+    --muted: 0.93 0.008 80;
+    --muted-foreground: 0.52 0.01 240;
+    --accent: 0.72 0.18 65;
+    --accent-foreground: 0.18 0.02 240;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.01 200;
+    --input: 0.88 0.01 200;
+    --ring: 0.52 0.15 196;
+    --chart-1: 0.52 0.15 196;
+    --chart-2: 0.72 0.18 65;
+    --chart-3: 0.6 0.12 150;
+    --chart-4: 0.646 0.222 41.116;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.97 0.006 80;
+    --sidebar-foreground: 0.18 0.02 240;
+    --sidebar-primary: 0.52 0.15 196;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.008 80;
+    --sidebar-accent-foreground: 0.18 0.02 240;
+    --sidebar-border: 0.88 0.01 200;
+    --sidebar-ring: 0.52 0.15 196;
+
+    /* Custom portfolio tokens */
+    --hero-gradient-start: 0.18 0.04 230;
+    --hero-gradient-end: 0.28 0.08 220;
+    --gold: 0.72 0.18 65;
+    --teal: 0.52 0.15 196;
+    --teal-light: 0.72 0.1 196;
+  }
+
+  .dark {
+    --background: 0.13 0.02 240;
+    --foreground: 0.95 0.008 240;
+    --card: 0.18 0.025 240;
+    --card-foreground: 0.95 0.008 240;
+    --popover: 0.22 0.025 240;
+    --popover-foreground: 0.95 0.008 240;
+    --primary: 0.65 0.16 196;
+    --primary-foreground: 0.13 0.02 240;
+    --secondary: 0.22 0.025 240;
+    --secondary-foreground: 0.95 0.008 240;
+    --muted: 0.22 0.025 240;
+    --muted-foreground: 0.62 0.01 240;
+    --accent: 0.72 0.18 65;
+    --accent-foreground: 0.13 0.02 240;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.13 0.02 240;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.65 0.16 196;
+    --chart-1: 0.65 0.16 196;
+    --chart-2: 0.72 0.18 65;
+    --chart-3: 0.6 0.12 150;
+    --chart-4: 0.646 0.222 41.116;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.18 0.025 240;
+    --sidebar-foreground: 0.95 0.008 240;
+    --sidebar-primary: 0.65 0.16 196;
+    --sidebar-primary-foreground: 0.13 0.02 240;
+    --sidebar-accent: 0.22 0.025 240;
+    --sidebar-accent-foreground: 0.95 0.008 240;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.65 0.16 196;
+
+    /* Custom portfolio tokens — dark */
+    --hero-gradient-start: 0.12 0.04 230;
+    --hero-gradient-end: 0.18 0.06 220;
+    --gold: 0.78 0.18 68;
+    --teal: 0.65 0.16 196;
+    --teal-light: 0.8 0.1 196;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Satoshi", sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg, oklch(var(--teal)), oklch(var(--teal-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, oklch(var(--gold)), oklch(0.82 0.14 75));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-bg {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--hero-gradient-start)) 0%,
+      oklch(var(--hero-gradient-end)) 100%
+    );
+  }
+
+  .glass-card {
+    background: oklch(1 0 0 / 6%);
+    backdrop-filter: blur(16px);
+    border: 1px solid oklch(1 0 0 / 12%);
+  }
+
+  .progress-bar-fill {
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link-hover {
+    position: relative;
+  }
+  .nav-link-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: oklch(var(--teal));
+    transition: width 0.3s ease;
+  }
+  .nav-link-hover:hover::after {
+    width: 100%;
+  }
+
+  .stat-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, oklch(var(--teal)), oklch(var(--gold)));
+  }
+}
