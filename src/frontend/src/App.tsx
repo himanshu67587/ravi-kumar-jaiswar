@@ -565,7 +565,7 @@ export default function App() {
                   {/* Main avatar circle */}
                   <div className="w-full h-full rounded-full border-4 border-teal/30 bg-gradient-to-br from-teal/20 to-gold/20 flex items-center justify-center overflow-hidden">
                     <img
-                      src="/assets/uploads/Screenshot-2026-02-27-211026-1.jpg"
+                      src="/assets/profile.png"
                       alt="Ravi Kumar Jaiswar"
                       className="w-full h-full object-cover"
                     />
