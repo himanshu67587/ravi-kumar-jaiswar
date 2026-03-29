@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
+import profilePhoto from "./assets/profile-photo.jpg";
 import { useActor } from "./hooks/useActor";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -493,7 +494,7 @@ export default function App() {
                 {/* Avatar */}
                 <div className="w-72 h-72 rounded-full glass-card flex items-center justify-center relative overflow-hidden">
                   <img
-                    src="/assets/uploads/Screenshot-2026-02-27-211026-1.jpg"
+                    src={profilePhoto}
                     alt="Ravi Kumar Jaiswar"
                     className="w-full h-full object-cover"
                   />
@@ -565,7 +566,7 @@ export default function App() {
                   {/* Main avatar circle */}
                   <div className="w-full h-full rounded-full border-4 border-teal/30 bg-gradient-to-br from-teal/20 to-gold/20 flex items-center justify-center overflow-hidden">
                     <img
-                      src="/assets/profile.png"
+                      src={profilePhoto}
                       alt="Ravi Kumar Jaiswar"
                       className="w-full h-full object-cover"
                     />
