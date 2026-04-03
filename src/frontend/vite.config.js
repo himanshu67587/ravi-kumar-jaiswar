@@ -18,7 +18,6 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     minify: false,
-    outDir: 'dist',
   },
   css: {
     postcss: "./postcss.config.js",
@@ -58,5 +57,4 @@ export default defineConfig({
     ],
     dedupe: ["@dfinity/agent"],
   },
-  publicDir: 'public',
 });
